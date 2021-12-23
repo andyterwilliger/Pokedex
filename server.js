@@ -10,9 +10,11 @@ const port = 3000;
 
 //middleware
 
+app.use(morgan('dev'));
 
+app.use(express.urlencoded({extended : false}));
 
-
+app.use(express.static('public'));
 
 
 
@@ -22,7 +24,9 @@ const port = 3000;
 //routes INDUCES
 
 app.get('/pokemon', (req, res) => {
-    res.send("I have never seen Pokemon or owned any merch")
+    res.render('index.ejs', {
+        allPokemon: pokemon 
+    })
 });
 
 app.get('/fruits/new' , (req, res) => {
