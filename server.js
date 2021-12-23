@@ -19,14 +19,36 @@ const port = 3000;
 
 
 
-//routes
+//routes INDUCES
 
 app.get('/pokemon', (req, res) => {
     res.send("I have never seen Pokemon or owned any merch")
 });
 
+app.get('/fruits/new' , (req, res) => {
+    res.send ('new pokes')
+});
+
+app.delete('/pokemon/:id', (req, res) => {
+    res.send ('bye bye')
+});
+
+app.put('/pokemon/:id', (req, res) => {
+    res.send ('new data about pokes')
+});
+
+app.get('/pokemon/:id/edit', (req, res) => {
+    res.send('editing pokes')
+});
+
+app.get('/pokemon/:id', (req, res) => {
+    res.send('pokes')
+})
 
 
+app.get('/pokemon/:id', (req, res) => {
+    res.send("pics of pokemon I have never seen")
+});
 
 
 
