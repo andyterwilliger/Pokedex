@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Pokemon</title>
 </head>
+
 <body>
-    <h1> <%= pokeItem.name %> </h1>
-    <img src="<%= pokeItem.img %>" >
+    <h1>
+        <%= pokeItem.name %>
+    </h1>
+    <img src="<%= pokeItem.img %>">
+    <p>
+       Type: <%= pokeItem.type %>
+    </p>
+    <p>
+       HP: <%= pokeItem.stats.hp %>
+    </p>
+    <p>
+       Attack:  <%= pokeItem.stats.attack%>
+    </p>
+    <p>
+        Defense: <%= pokeItem.stats.defense %>
+    </p>
+    <p>
+       Special Attack: <%= pokeItem.stats.spattack%>
+
+    </p>
+    <p>
+        Special Defense: <%= pokeItem.stats.spdefense%>
+
+    </p>
+    <p>
+        Speed: <%= pokeItem.stats.speed%>
+    </p>
+
+
+    <form action="/pokemon/<%= pokeItem %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+    </form>
+    <a href='/pokemon/<%= pokeItem %>/edit'>EDIT</a>
 </body>
+
 </html>
