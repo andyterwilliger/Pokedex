@@ -11,10 +11,10 @@
 <div class = "container">
 <body>
     <h1>Pokedex</h1>
-    <button><a href="/pokemon/new">Add a Pokemon!</a></button>
+    <button id = "add-button"><a href="/pokemon/new">Add a Pokemon!</a></button>
     <div class= deck>
     <ul>
-        <% for (let i = 0; i < allPokemon.length; i++){ %>
+        <% for (let i = 0; i < allPokemon.length-141; i++){ %>
         <li>
             <a href="/pokemon/<%= i %>">
             <%= allPokemon[i].name %>
