@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<div class="container">
+
 
     <body>
         <h1>Pokedex</h1>
@@ -18,14 +18,11 @@
             <ul>
                 <% for (let i=0; i < allPokemon.length; i++){ %>
                     <li>
-                        <a href="/pokemon/<%= i %>">
-                            <%= allPokemon[i].name %>
-                        </a>
                     
-                    <img src=' <%= allPokemon[i].img %>'>
-                        
+                    <a href="/pokemon/<%= i %>"><img src= '<%= allPokemon[i].img %>'>
+                      </a>  
                     </li>
-        </div>
+       
 
 
         </form>

@@ -1,15 +1,13 @@
 body{
-    background-color: red;
-}
-
-ul{
-    display: flex;
-    flex-direction: row;
+    background: #0099F7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100%;
+    font-family: 'Pokemon Solid', sans-serif;
 }
 
 h1{
-    
+font-size: 75px;
 text-align: center
 
 }
@@ -21,9 +19,17 @@ a{
 }
 
 
+ul{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-row-gap: 10px;
+}
 li{
-    list-style: none;
+    display:flex;
+    list-style:none;
+    align-items: center;
+    
 }
 img{
-    width: 10%;
+    width: 30%;
 }
