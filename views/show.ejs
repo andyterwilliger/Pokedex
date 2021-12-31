@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/show.css">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <title>Your Pokemon</title>
 </head>
 
@@ -12,7 +14,11 @@
     <h1>
         <%= pokeItem.name %>
     </h1>
+   
+   <div id = "img-container">
     <img src="<%= pokeItem.img %>">
+   </div>
+    <div id= "container">
     <p>
        Type: <%= pokeItem.type %>
     </p>
@@ -36,12 +42,14 @@
     <p>
         Speed: <%= pokeItem.stats.speed%>
     </p>
-
+</div>
 
     <form action="/pokemon/<%= pokeItem %>?_method=DELETE" method="POST">
         <input type="submit" value="DELETE">
     </form>
-    <a href='/pokemon/<%= pokeItem %>/edit'>EDIT</a>
+    <button id="edit-button"><a href="/pokemon/edit">Edit A Pokemon!</a></button>
+
+    
 </body>
 
 </html>

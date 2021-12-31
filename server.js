@@ -34,7 +34,7 @@ app.use(methodOverride('_method'));
 app.get('/', (req, res) => res.redirect('/pokemon'));
 
 //index
-app.get('/pokemon/', (req, res) => {
+app.get('/pokemon', (req, res) => {
     res.render('index.ejs', {
         allPokemon: pokemon,
     })
@@ -52,7 +52,7 @@ app.delete('/pokemon/:indexOfPokemonArray', (req, res) => {
 });
 
 //update
-app.put('/pokemon/:id', (req, res) => {
+app.put('/pokemon/:indexOfPokemonArray', (req, res) => {
     pokemon[req.params.indexOfPokemonArray] = req.body;
     res.redirect('/pokemon');
 });

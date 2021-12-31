@@ -9,8 +9,9 @@
 <body>
     <h1>Edit a Pokemon</h1>
     <form action="/pokemon/ <%= index %>?_method=PUT" method= "POST">
-        Name: <input type="text" name="name" value= "<%=pokeItem%>">
-        <input type="submit" name= ''value="Submit">
+        Name: <input type="text" name="name" value= "<%= pokeItem[i].name%>">
+        
+        <input type="submit" value="Submit">
 
 
 
