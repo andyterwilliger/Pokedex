@@ -40,4 +40,14 @@ form{
     width: 10%;
     height: 10%;
 }
-
+#bottom{
+    display: flex;
+    justify-content: center;
+}
+#edit-button{
+    background-color: red;
+    border-radius: 50%;
+    font-family: "Pokemon Solid", sans-serif;
+    width: 10%;
+    height: 10%;
+}

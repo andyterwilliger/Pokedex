@@ -12,52 +12,53 @@
 
 <body>
     <%- include('./partials/header.ejs') %>
-    <h1>
-        <%= pokeItem.name %>
-    </h1>
-   
-   <div id = "img-container">
-    <img src="<%= pokeItem.img %>">
-   </div>
-    <div id= "container">
-    <p>
-       Type: <%= pokeItem.type %>
-    </p>
-    <p>
-        HP: <%= //pokeItem.stats.hp %>
-    </p>
+        <h1>
+            <%= pokeItem.name %>
+        </h1>
 
-    <p>
-       Attack:  <%= //pokeItem.stats.attack%>
-    </p>
-    <p>
-        Defense: <%= //pokeItem.stats.defense %>
-    </p>
-    <p>
-       Special Attack: <%= //pokeItem.stats.spattack%>
+        <div id="img-container">
+            <img src="<%= pokeItem.img %>">
+        </div>
+        <div id="container">
+            <p>
+                Type: <%= pokeItem.type %>
+            </p>
+            <p>
+                HP: <%= //pokeItem.stats.hp %>
+            </p>
 
-    </p>
-    <p>
-        Special Defense: <%= //pokeItem.stats.spdefense%>
+            <p>
+                Attack: <%= //pokeItem.stats.attack%>
+            </p>
+            <p>
+                Defense: <%= //pokeItem.stats.defense %>
+            </p>
+            <p>
+                Special Attack: <%= //pokeItem.stats.spattack%>
 
-    </p>
-    <p>
-        Speed: <%= //pokeItem.stats.speed%>
-    </p>
-    
+            </p>
+            <p>
+                Special Defense: <%= //pokeItem.stats.spdefense%>
+
+            </p>
+            <p>
+                Speed: <%= //pokeItem.stats.speed%>
+            </p>
 
 
-    
-    
-    
-</div>
 
-    <form action="/pokemon/<%= id %>?_method=DELETE" method="POST">
-        <input id = "delete-button" type="submit" value="DELETE">
-    </form>
-    <a id = "edit-link" href="/pokemon/<%= id %>/edit">Edit <%= pokeItem.name %></a>
 
-    
+
+
+        </div>
+
+        <form action="/pokemon/<%= id %>?_method=DELETE" method="POST">
+            <input id="delete-button" type="submit" value="DELETE">
+        </form>
+        <div id = "bottom">
+        <button id="edit-button"> <a id="edit-link" href="/pokemon/<%= id %>/edit">Edit <%= pokeItem.name %></a> </button>
+            </div>
+
 </body>
 
 </html>
