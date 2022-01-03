@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/edit.css">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <title>Edit a Pokemon</title>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
     <h1>Edit a Pokemon</h1>
-    <form action="/pokemon/ <%= index %>?_method=PUT" method= "POST">
-        Name: <input type="text" name="name" value= "<%= pokeItem[i].name%>">
+    <div id= "edit-form">
+    <form action="/pokemon/<%= index %>?_method=PUT" method= "POST">
+        Name: <input  type="text" name="name" value="<%= pokeItem.name %>"> <br>
+        ID: <input  type="text" name="id" value= "<%=pokeItem.id%>"> <br>
+        Image: <input type="text" name="img" value= "<%=pokeItem.img%>"> <br>
+        Type: <input type="text" name= "type" value= "<%= pokeItem.type %>"> <br>
+        HP: <input type="text" name= "hp" value= "<%= //pokeItem.stats.hp %>"> <br>
+        Attack: <input type="text" name= "attack" value= "<%= //pokeItem.stats.attack %>"> <br>
+        Special Defense: <input type="text" name="spdefense" value="<%= //pokeItem.stats.spdefense %>"> <br>
+        SP Attack: <input type="text" name="spattack" value="<%= //pokeItem.stats.spattack %>"><br>
+
         
-        <input type="submit" value="Submit">
+        <input id = "submit" type="submit" value="Update Pokemon">
 
 
 
     </form>
+    </div>
 </body>
 </html>

@@ -8,6 +8,13 @@ const methodOverride = require('method-override');
 
 const app = express();
 
+app.use((req, res, next) => {
+    res.locals.url = req.originalUrl;
+    res.locals.host = req.get('host');
+    res.locals.protocol = req.protocol;
+    next();
+});
+
 const port = 3000;
 
 //middleware
@@ -18,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     next();
 })
 
@@ -36,7 +43,7 @@ app.get('/', (req, res) => res.redirect('/pokemon'));
 //index
 app.get('/pokemon', (req, res) => {
     res.render('index.ejs', {
-        allPokemon: pokemon,
+        pokeItem: pokemon
     })
 });
 
@@ -46,14 +53,14 @@ app.get('/pokemon/new', (req, res) => {
 });
 
 //delete
-app.delete('/pokemon/:indexOfPokemonArray', (req, res) => {
-    pokemon.splice(req.params.indexOfPokemonArray, 1);
+app.delete('/pokemon/:id', (req, res) => {
+    pokemon.splice(req.params.id, 1);
     res.redirect('/pokemon');
 });
 
 //update
-app.put('/pokemon/:indexOfPokemonArray', (req, res) => {
-    pokemon[req.params.indexOfPokemonArray] = req.body;
+app.put('/pokemon/:id', (req, res) => {
+    pokemon[req.params.id] = req.body;
     res.redirect('/pokemon');
 });
 
@@ -61,8 +68,23 @@ app.put('/pokemon/:indexOfPokemonArray', (req, res) => {
 
 //create
 app.post('/pokemon', (req, res) => {
-    pokemon.unshift(req.body)
+    pokemon.unshift({
+        id: req.body.id,
+        img: req.body.img,
+        name: req.body.name,
+        type: [req.body.type],
+        stats:{
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed,
+        }
+    })
+    
     res.redirect('/pokemon')
+    
 });
 
 
@@ -71,16 +93,21 @@ app.post('/pokemon', (req, res) => {
 //});
 
 //edit
-app.get('/pokemon/:indexOfPokemonArray/edit', (req, res) => {
+app.get('/pokemon/:id/edit', (req, res) => {
     res.render('edit.ejs', {
-        pokeItem: pokemon[req.params.indexOfPokemonArray],
-        index: req.params.indexOfPokemonArray,
+        pokeItem: pokemon[req.params.id],
+        index: req.params.id
     });
 });
 
 //show
-app.get('/pokemon/:indexOfPokemonArray', (req, res) => {
-    res.render('show.ejs', { pokeItem: pokemon[req.params.indexOfPokemonArray] });
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs',
+        {
+            pokeItem: pokemon[req.params.id],
+            id: req.params.id
+        });
+
 });
 
 

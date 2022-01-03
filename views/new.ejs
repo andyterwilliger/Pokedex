@@ -2,12 +2,19 @@
 <html lang="en">
 <%- include('./partials/head.ejs')%>
 <body>
+    <%- include('./partials/header.ejs') %>
     <h1>Add a Pokemon!</h1>
     <form action="/pokemon" method="POST">
-        Name: <input type="text" name="name" id="name">
-        Image: <input type="text" name = "img" id = "image"><br>
+        Name: <input type="text" name="name" id="name"><br>
+        ID: <input type="text" name="id"> <br>
+        Image: <input type="text" name="img"> <br>
+        Type: <input type="text" name= "type"><br>
+        HP: <input type="text" name= "hp" > <br>
+        Attack: <input type="text" name= "attack"> <br>
+        Special Defense: <input type="text" name="spdefense"> <br>
+        SP Attack: <input type="text" name="spattack"> <br>
         <input type="submit" value="Add Pokemon" id= "new-pokemon-button">
-    
+        
     
     
     

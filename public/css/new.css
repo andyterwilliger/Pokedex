@@ -4,6 +4,12 @@ form{
 
 #new-pokemon-button{
     margin-top: 20px;
+    border-radius: 50%;
+    background-color: red;
+    font-family: "Pokemon Solid", sans-serif;
 
+}
 
+input{
+    margin: 10px;
 }

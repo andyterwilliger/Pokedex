@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <%- include('./partials/header.ejs') %>
     <h1>
         <%= pokeItem.name %>
     </h1>
@@ -23,31 +24,38 @@
        Type: <%= pokeItem.type %>
     </p>
     <p>
-       HP: <%= pokeItem.stats.hp %>
+        HP: <%= //pokeItem.stats.hp %>
+    </p>
+
+    <p>
+       Attack:  <%= //pokeItem.stats.attack%>
     </p>
     <p>
-       Attack:  <%= pokeItem.stats.attack%>
+        Defense: <%= //pokeItem.stats.defense %>
     </p>
     <p>
-        Defense: <%= pokeItem.stats.defense %>
-    </p>
-    <p>
-       Special Attack: <%= pokeItem.stats.spattack%>
+       Special Attack: <%= //pokeItem.stats.spattack%>
 
     </p>
     <p>
-        Special Defense: <%= pokeItem.stats.spdefense%>
+        Special Defense: <%= //pokeItem.stats.spdefense%>
 
     </p>
     <p>
-        Speed: <%= pokeItem.stats.speed%>
+        Speed: <%= //pokeItem.stats.speed%>
     </p>
+    
+
+
+    
+    
+    
 </div>
 
-    <form action="/pokemon/<%= pokeItem %>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
+    <form action="/pokemon/<%= id %>?_method=DELETE" method="POST">
+        <input id = "delete-button" type="submit" value="DELETE">
     </form>
-    <button id="edit-button"><a href="/pokemon/edit">Edit A Pokemon!</a></button>
+    <a id = "edit-link" href="/pokemon/<%= id %>/edit">Edit <%= pokeItem.name %></a>
 
     
 </body>

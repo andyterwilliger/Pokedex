@@ -5,33 +5,29 @@ body{
     height: 100%;
     font-family: 'Pokemon Solid', sans-serif;
 }
-
-h1{
-font-size: 75px;
-text-align: center
-
-}
-
 a{
     text-decoration: none;
     color:black;
+}
+
+h1{
+    text-align: center;
+}
+
+#edit-form{
     display: flex;
-}
+    justify-content: center;
 
-
-ul{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-row-gap: 10px;
-}
-li{
-    display:flex;
-    list-style:none;
-    align-items: center;
     
 }
-img{
-    width: 30%;
+
+input{
+    margin: 10px
+    }
+
+
+#submit{
+    background-color: red;
+    font-family: 'Pokemon Solid', sans-serif;
+    border-radius: 50%;
 }
-
-

@@ -11,6 +11,10 @@ font-size: 75px;
 text-align: center
 
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 #img-container{
     display: flex;
@@ -22,5 +26,18 @@ text-align: center
     flex-direction: column;
     align-items: center;
 
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+#delete-button{
+    background-color: red;
+    border-radius: 50%;
+    font-family: "Pokemon Solid", sans-serif;
+    width: 10%;
+    height: 10%;
 }
 
