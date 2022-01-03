@@ -60,7 +60,16 @@ app.delete('/pokemon/:id', (req, res) => {
 
 //update
 app.put('/pokemon/:id', (req, res) => {
-    pokemon[req.params.id] = req.body;
+     pokemon[req.params.id] = req.body;
+     req.body.type = [req.body.type];
+     req.body.stats = {
+         hp: req.body.hp,
+         attack: req.body.attack,
+         defense: req.body.defense,
+         spattack: req.body.spattack,
+         spdefense: req.body.spdefense,
+         speed: req.body.speed
+     }
     res.redirect('/pokemon');
 });
 
